@@ -1,0 +1,69 @@
+/* Downloada fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* Formatar Título */
+h3{     
+        text-shadow: 3px 3px 6px black ;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: .2rem;
+        color: white;
+        text-align: center;
+        font-style: normal;
+		font-weight: bold;
+		font-size: 30px;
+	
+}
+
+/* Formatar instruções */
+.instucoes{
+
+    text-shadow: 3px 3px 6px black ;
+    color: white;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.subinstrucoes{
+
+    text-shadow: 3px 3px 6px black ;
+    color: white;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/* Formatar elementos na mesma linha */
+.sameline{
+    display: inline-flex;    
+}
+
+/* Formar cabeçalho informações */
+.info{
+    
+    text-shadow: 3px 3px 6px black ;
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: verdana, sans-serif;
+    
+
+}
+
+/* Formatar valores */
+.valores{
+
+    text-shadow: 3px 3px 6px black ;
+    color: white;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: verdana, sans-serif;
+}

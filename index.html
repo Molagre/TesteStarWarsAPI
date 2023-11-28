@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BD SW</title>
+       
+        <!-- Inserir CSS -->
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="table.css">
+        <link rel="stylesheet" href="background.css">
+        
+    </head>
+
+    <body>
+
+        <!-- Teste Background -->
+        <div class="backgroundvideo">
+            <video autoplay loop>
+                <source src="swvideo.mp4" type="video/mp4">
+            </video>
+            <div class="conteudo">
+        
+                <!-- Cabeçalho -->
+                <h3>ATIVIDADE ID STAR WARS</h3>
+
+                <div class="instucoes">
+                <img src="swlogo.png" alt="" height="120" width="210">
+                <br><br>
+                </div>
+
+                
+                <div class="instucoes">
+                O objetivo desta atividade é buscar informações em uma API e atualiza-las a 
+                partir de um Id definida pelo usuário   
+
+                <br><br>   
+                    <div class="subinstrucoes">
+                    Digite um número para selecionar um personagem e veja suas especificações!
+                    </div>
+                    
+                <br>
+                <input type="number" placeholder="1" id="cxtexto">
+                <button onclick="BuscarId()">Buscar ID</button>
+                </div>
+            
+
+                <script>
+                    // Declarar Variável NumeroId
+                    var NumeroId = document.getElementById("cxtexto").value
+
+
+                    // Botão definir valor ID
+                    function BuscarId() {
+                        var NumeroId = document.getElementById("cxtexto").value
+
+                        if(NumeroId) {
+                            NumeroId = document.getElementById("cxtexto").value
+                        } else {
+                            NumeroId = 1
+                        }
+
+                        // Acessar API + Valor ID
+                        fetch('https://swapi.dev/api/people/'+NumeroId)
+                                        // Baixar dados da API
+                                        .then(function(response){
+                                            return response.json();
+                                        })
+                                        // Direcionar Id para cada dado Baixado
+                                        .then(function(data){
+                                            
+                                            document.getElementById('NomePersonagem').innerHTML= data.name;
+                                            document.getElementById('AlturaPersonagem').innerHTML= data.height;
+                                            document.getElementById('PesoPersonagem').innerHTML= data.mass;
+                                            document.getElementById('CorPelePersonagem').innerHTML= data.skin_color;
+                                            document.getElementById('CorCabeloPersonagem').innerHTML= data.hair_color;
+                                            document.getElementById('CorOlhoPersonagem').innerHTML= data.eye_color;
+                                            document.getElementById('GeneroPersonagem').innerHTML= data.gender;
+
+                                        });
+
+                    }           
+                        
+                </script>
+
+                <!-- Tabela -->
+                <br><br>
+                <center>
+                
+                <table>
+                <tr>
+                    <td><div class="info"><Label>Nome:&nbsp;</Label></div></td>
+                    <td><div class="valores" id="NomePersonagem"></div></td>
+                    
+                    <td><div class="info"><Label>Altura:&nbsp;</Label></div></td>
+                    <td><div class="valores" id="AlturaPersonagem"></div></td>
+                    
+                    <td><div class="info"><Label>Peso:&nbsp;</Label></div></td>
+                    <td><div class="valores" id="PesoPersonagem"></div></td>
+
+                </tr>
+
+                <tr>
+                    <td><div class="info"><Label>Cor da pele:&nbsp;</Label></div></td>
+                    <td><div class="valores" id="CorPelePersonagem"></div></td>
+                    
+                    <td><div class="info"><Label>Cor do cabelo:&nbsp;</Label></div></td>
+                    <td><div class="valores" id="CorCabeloPersonagem"></div></td>
+                    
+                    <td><div class="info"><Label>Cor do olho:&nbsp;</Label></div></td>
+                    <td><div class="valores" id="CorOlhoPersonagem"></div></td>
+
+                </tr>
+                    <td></td>
+                    <td></td>
+                    <td><div class="info"><Label>Gênero&nbsp;</Label></div></td>
+                    <td><div class="valores" id="GeneroPersonagem"></div></td>
+                    <td></td>
+                    <td></td>
+
+                <tr>
+
+                </tr>
+
+                </table>
+
+                <center>
+
+                
+
+
+
+                
+
+                <!-- DIVs: Informações dos personagens -->
+                <!-- &nbsp; = espaço para as próximas Ids -->
+                
+                <!-- <div class="sameline" >
+                    <div class="info"><Label>Nome:&nbsp;</Label></div>
+                    <div class="valores" id="NomePersonagem"></div>
+                </div> -->
+                
+                <!-- <div>
+                    <div class="sameline">
+                        <div class="info"><label>Altura:&nbsp;</label></div> 
+                        <div class="valores" id='AlturaPersonagem'></div>    
+                    </div>
+                </div> -->
+                
+                <!-- <div id='PesoPersonagem'></div>
+                <div id='CorPelePersonagem'></div>
+                <div id='CorCabeloPersonagem'></div>
+                <div id='CorOlhoPersonagem'></div>
+                <div id='GeneroPersonagem'></div> -->
+
+        
+        </div>
+    </div>
+
+    </body>
+</html>
